@@ -16,11 +16,14 @@
             background: blue;
             text-align: center;
         }
-        .wrapper > div{
+		header > h2 {
+			margin-top: 0;
+		}
+		.wrapper > div{
             float: left;
         }
 		.wrapper {
-			width: 960px;
+			width: 100%;
 			margin: auto;
 		}
 		.sidebar{
@@ -72,6 +75,41 @@
 		.f1{
 		float:right;
 		}
+		body.fixed-top > header {
+			position:fixed;
+			top: 0;
+		}
+		body.fixed-top .sidebar {
+			position:fixed;
+			top: 100px;
+		}
+		
+		@keyframes gotop {
+			from {margin-top:0px;}
+			50% {margin-top: -2px;}
+			to {margin-top:0px;}
+
+		}
+		.up-button{
+			height:50px;
+			width:50px;
+			border-radius:50%;
+			position: fixed;
+			bottom:10px;
+			right:10px;
+			background:white;
+			display: none;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.up-button {
+			height:50px;
+			width: 50px;
+		}
+		.up-button:hover > img{
+			animation: gotop  0.7s infinite ease-out;
+		}
+		
 		
 		@media (max-width:600px){
 			body .sidebar {
@@ -83,12 +121,19 @@
 			.wrapper {
 				width: 100%;
 			}
+			.up-button{width:30px; height:30px;}
+		}
+		@media (min-width:600px){
+			body.fixed-top .content {
+				margin-left: 300px;
+			}
 		}
 	</style>
 </head>
 <body>
 <header>
-<h2>This is the header!</h2>
+	<h2>This is the header!</h2>
+	234234234
 </header>
 <div class="wrapper clearfix">
 <div class="sidebar">
@@ -124,10 +169,36 @@
 Исследованиям радиозвезд их расстояний и оптически. Другой стороны, оптически яркие объекты, например звезды первой звездной. Концентрацию к ее плоскости галактики тоже будет все-таки. Была выдвинута гипотеза о тщетности попыток. Именно из источников, располагающихся вне этой площадке ярких оптических объектов. Объекты обнаруживают концентрацию к. Методы определения их расстояний и радиообъектов показывала никакой связи. Объект нужно искать в целой площадке, содержащей десятки квадратных минут.</div>
 </div>
 </div>
+<div class="up-button">
+<img width="85%" style="margin-left: 5px;" class="finger" src="finger.png"></img>
+</div>
 <footer class="myfooter">
    This is footer!
    <hr>
    <div class="f1">By Max Matyushin</div>
 </footer>
+<script>
+	(function(){
+		window.addEventListener('scroll', function(){
+			console.log("lol");
+			if ( window.scrollY > 100) {
+				document.querySelector("body").classList.add("fixed-top");
+				
+			} else {
+				document.querySelector("body").classList.remove("fixed-top");
+			}
+			if (window.scrollY !== 0) {
+				document.querySelector(".up-button").style.display = "block";
+			} else {
+				document.querySelector(".up-button").style.display = "none";
+			}
+		});
+		
+		document.querySelector(".up-button").addEventListener("click", function(){
+			window.scrollTo(0,0);
+		});
+						
+	})();
+</script>
 </body>
 </html>
