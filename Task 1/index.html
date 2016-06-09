@@ -5,16 +5,17 @@
     <title>FirstSite</title>
 	<style>
 	 html, body {
-            width: 100%;
+            width: 1000px;
             height: 100%;
             padding: 0;
-            margin: 0;
+            margin: auto;
         }
         header {
             width: 100%;
             height: 100px;
             background: blue;
             text-align: center;
+
         }
 		header > h2 {
 			margin-top: 0;
@@ -25,6 +26,16 @@
 		.wrapper {
 			width: 100%;
 			margin: auto;
+		}
+		.topmenu {
+			width: 1000px;
+			height: 20px;
+			background: black;
+			text-align:center;
+		}
+		.topmenu > p{
+			margin-top:0px;
+			color:white;
 		}
 		.sidebar{
             width: 300px;
@@ -75,13 +86,17 @@
 		.f1{
 		float:right;
 		}
-		body.fixed-top > header {
+		body.fixed-top .topmenu {
+		
 			position:fixed;
-			top: 0;
+			top: 0px;
 		}
 		body.fixed-top .sidebar {
 			position:fixed;
-			top: 100px;
+			top: 20px;
+		}
+		body.fixed-top .content {
+		
 		}
 		
 		@keyframes gotop {
@@ -111,19 +126,24 @@
 		}
 		
 		
-		@media (max-width:600px){
+		@media (max-width:1000px){
+			html, body {
+				width:100%;
+			}
 			body .sidebar {
 				width: 100%;
 			}
+			body .topmenu {
+				width:100%;
+			}
 			body .content {
-				width: 100%;
+				width:100%;
 			}
-			.wrapper {
-				width: 100%;
-			}
+			
+			
 			.up-button{width:30px; height:30px;}
 		}
-		@media (min-width:600px){
+		@media (min-width:1000px){
 			body.fixed-top .content {
 				margin-left: 300px;
 			}
@@ -135,7 +155,11 @@
 	<h2>This is the header!</h2>
 	234234234
 </header>
+
 <div class="wrapper clearfix">
+<div class ="topmenu">
+<p>This is menu</p>
+</div>
 <div class="sidebar">
 <p>Here is sidebar!</p>
 <br>
@@ -180,7 +204,7 @@
 <script>
 	(function(){
 		window.addEventListener('scroll', function(){
-			console.log("lol");
+			console.log("123");
 			if ( window.scrollY > 100) {
 				document.querySelector("body").classList.add("fixed-top");
 				
