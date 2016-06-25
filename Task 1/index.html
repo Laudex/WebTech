@@ -252,13 +252,34 @@
 			color:#FFF;
 			font-weight:bold;
 		}
+		
+		.section{
+			clear: both;
+			padding: 0;
+			margin: 0;
+		}
+		.col {
+			display: block;			
+			margin: 1% 5% 1% 0;
+		}
+
+		.col:first-child {
+			margin-left: 0;
+		}
+		.group:before,
+		.group:after {
+			content: "";
+			display: table;
+		}
+		.
+		.group:after {
+			clear: both;
+		}
 		.grid1{
-		background-color:black;
-		margin-right:10%;
+		background-color:black;		
 		width:40%;
 		float:left;
 		padding:10px;		
-		margin-bottom:0px;
 		}
 		.grid2{
 		background-color:black;
@@ -270,7 +291,7 @@
 		.grid3{
 		background:black;
 		width:40%;
-		margin-right:10%;
+		margin-right:5%;
 		float:left;
 		padding:10px;
 		}
@@ -443,15 +464,16 @@ data="https://www.youtube.com/v/2uneYz201p0">
 </div>
 <div class="content clearfix">
 <h1>LAST NEWS</h1>
+<div class="section group">
 <div class="grid12">
-<div class="grid1">
+<div class="col grid1">
 <img src="news1.png" width=100%>
 <p class="newhead">27 Years Ago: Nirvana Release Their Debut Album ‘Bleach’</p>
 <p class="news">On June 15, 1989, Nirvana issued their debut disc 'Bleach.'</p>
 <br>ft
 <a href="news1.html" class="readmore">Read more</a>
 </div>
-<div class="grid2">
+<div class="col grid2">
 <img src="news2.jpg" width=100%>
 <p class="newhead">Vote for the Most Anticipated New Release of July 2016!</p>
 <p class="news">Who has the album you most want to pick up? Vote for the most anticipated new release of July 2016 here.</p>
@@ -459,19 +481,20 @@ data="https://www.youtube.com/v/2uneYz201p0">
 </div>
 </div>
 
-<div class="grid3">
+<div class="col grid3">
 <img src="news3.jpg" width=100%>
 <p class="newhead">Vote for the Most Anticipated New Release of July 2016!</p>
 <p class="news">Who has the album you most want to pick up? Vote for the most anticipated new release of July 2016 here.</p>
 <a href="news2.html" class="readmore">Read more</a>
 </div>
-<div class="grid4">
+<div class="col grid4">
 <img src="news4.jpg" width=100%>
 <p class="newhead">Vote for the Most Anticipated New Release of July 2016!</p>
 <p class="news">Who has the album you most want to pick up? Vote for the most anticipated new release of July 2016 here.</p>
 <a href="news2.html" class="readmore">Read more</a>
 </div>
-<div class="grid5"></div>
+<div class="col grid5"></div>
+</div>
 </div>
 <div class="up-button">
 <img width="85%" style="margin-left: 5px;" class="finger" src="finger.png"></img>
